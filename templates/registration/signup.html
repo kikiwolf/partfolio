@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+   {% load crispy_forms_tags %}
+      {% block content %}
+   <div class="reg-all">
+<div class="reg-post">
+   <br><br>
+      <h4 class="text-enter">Ro'yxatdan o'tish</h4>
+  <br><br><br><br>
+<form method="post">{% csrf_token %}
+  {{ form|crispy }}
+      <br>
+  <button type="submit" class="reg-button">Yuborish</button>
+</form>
+  </div>
+    </div>
+
+<style>
+    .reg-all {
+       width: 700px;
+       height: auto;
+       border: none;
+       padding: 10px;
+       text-align: left;
+       background: none;
+    }
+
+    .reg-pos {
+       width: 100%;
+       height: auto;
+       border: none;
+       background: none;
+    }
+
+    .text-enter { color: #424242; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 10px; }
+
+        input {
+          width: 100%;
+          height: 30px;
+          margin-left: 10px;
+        }
+
+        .reg-button {
+            width: 100px;
+            height: 50px;
+            border: none;
+            background: none;
+            color: #1565C0;
+            float: left;
+            padding-left: 5px;
+            margin-top: 3px;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        .reg-button {
+            transition-duration: 0.4s;
+        }
+
+        .reg-button:hover {
+            color: #FFFFFF;
+            background: #1565C0;
+        }
+</style>
+
+{% endblock content %} 

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="card-edit">
+<h1 class="new-post">Postni o'chirish</h1>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+<h5 class="new-post"><b>"{{ article.title }}"</b> nomli postni o'chirishni istaysizmi ?</h4>
+<button class="menu" type="submit">Ha</button>
+</form>
+
+
+<style>
+    .new-post {
+        color: #424242;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 35px;
+    }
+
+    form {
+        margin-left: 15px;
+    }
+</style>
+
+{% endblock content %}

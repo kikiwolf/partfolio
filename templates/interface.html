@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+<div class="interface-card">
+    <br><br><br>
+
+    <div class="username-card">
+        <h4 class="uname-text">Username: <font color="#1565C0"> @{{ user.username }} </font></h4>
+          <h4 class="uname">First name: <font color="#006064"> {{ user.first_name }} </font></h4>
+    </div>
+    <div class="useremail-card">
+         <h4 class="email-text">Email Address: <font color="#006064"> {{ user.email }} </font></h4>
+    </div>
+<br><br>
+<br>
+    <br>
+    <div class="passw-edit-card">
+            <a href="{% url 'password_change' %}">
+        <h4 class="password-text">Change Password</h4></a>
+    </div>
+</div>
+
+<style>
+    .interface-card {
+        width: 100%;
+        text-align: center;
+        height: auto;
+        padding: 10px;
+        border: none;
+        background: none;
+    }
+
+    .username-card {
+        width: 700px;
+        text-align: left;
+        height: auto;
+        border: none;
+        background: none;
+    }
+
+    .useremail-card {
+        width: 700px;
+        height: auto;
+        border: none;
+        background: none;
+    }
+
+
+</style>
+
+   
+
+{% endblock content %}

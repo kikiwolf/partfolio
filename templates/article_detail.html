@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+
+{% if object.photo %}
+<div class="card-all">
+    <center>
+<div class="interface-card">
+    <h4 class="article-title">{{ object.author }}</h4>
+    <br><br><br>
+</div>
+<img src="{{ object.photo.url }}" width="50%" height="auto">
+{% endif %}
+        <div class="interface-card">
+<h1 class="article-title">{{ object.title }}</h1>
+</div>
+<div class="interface-card">
+    <br><br><br><br>
+<h4 class="article-body">{{ object.body | safe }}</h4>
+<a href="{% url 'article_edit' article.pk %}"><button class="start-register">Postni tahrirlash</button></a> 
+<a href="{% url 'article_delete' article.pk %}"><button class="start-register">Postni o'chirish</button></a> 
+<a href="{% url 'article_list' %}"><button class="start-register">Barchasi</button></a>
+</div>
+        </center>
+</div>
+
+
+<style>
+    .start-register {
+         width: 150px;
+         height: 50px;
+         border: none;
+         background: none;
+         color: #00897B;
+      }
+
+    .start-register {
+       transition-duration: 0.4s;
+    }
+
+    .start-register:hover {
+        color: #FFFFFF;
+        background: #00897B;
+     }
+</style>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br>
+    <div class="card-post">
+<br><br>
+<h1 class="new-post">Yangi Post</h1>
+<br>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+<button class="menu" type="submit">Save</button>
+</form>
+        </div>
+
+<style>
+    .new-post {
+        color: #424242;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 35px;
+    }
+
+    form {
+        margin-left: 35px;
+    }
+</style>
+
+
+{% endblock content %}

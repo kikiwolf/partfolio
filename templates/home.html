@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<div class="full-place">
+        {% if user.is_authenticated %}
+    <br><br><br><br><br>
+    <h4 class="share-text"><b>Share your useful articles</b></h4>
+    <h4 class="share-text"><b>Let's register and start sharing!</b></h4>
+    <a href="{% url 'logout' %}"><button id="close1" type="button" class="start-signup">Chiqish</button></a>
+    <a href="{% url 'article_list' %}"><button type="button" class="start-register">Add project</button></a>
+       {% else %}
+    <br><br><br><br><br>
+    <h4 class="share-text"><b>Share your useful articles</b></h4>
+    <h4 class="share-text"><b>Let's register and start sharing!</b></h4>
+    <a href="{% url 'signup' %}"><button class="start-register">Register</button></a>
+    <a href="{% url 'login' %}"><button class="start-signup">Log in</button></a>
+    {% endif %}
+</div>
+
+<style>
+    .full-place {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      border: none;
+      background: none;
+    }
+
+    .share-text {
+      font-size: 50px;
+      color: #424242;
+
+      }
+
+      .start-register {
+         width: 200px;
+         height: 50px;
+         border: none;
+         background: none;
+         color: #00897B;
+      }
+
+    .start-register {
+       transition-duration: 0.4s;
+    }
+
+    .start-register:hover {
+        color: #FFFFFF;
+        background: #00897B;
+     }
+
+    .start-signup {
+         width: 200px;
+         height: 50px;
+         border: none;
+         background: none;
+         color: #424242;
+      }
+
+    .start-signup {
+       transition-duration: 0.4s;
+    }
+
+    .start-signup:hover {
+        color: #FFFFFF;
+        background: #212121;
+     }
+
+
+</style>
+{% endblock content %}
